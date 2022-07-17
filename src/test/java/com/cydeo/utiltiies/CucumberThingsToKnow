@@ -1,0 +1,31 @@
+DryRun = to turn off our step definitions iomplementations from running so we can easily generate the snippets
+
+tags = we can creat different scenario suits where we can include or exclude different scenarios  (or, and, not)
+or = scenario will be executed if it has either one of the tags
+and = scenario will be executed if it has both of the tags
+not = excluding a certainn scenario with a tag
+
+plugins =
+                "html:target/cucumber-report.html", //this one generates default cucumber html report
+                "rerun:target/rerun.txt", //this one is for storing our failed tests,
+                "me.jvt.cucumber.report.PrettyReports:target/cucumber" //this report generates maven cucumber report with pie chart and stuff
+
+background = background is used to reuse the ste[ps that are common in the same feature file. It's like before method for the scenarios
+
+hooks = hooks are used to create pre and post conditions for ALL scenarios in our project, we should be very selective on what we put in the hooks,
+like for example is the test failed, take screenshot
+
+parameterization = it is being able to pass and change data directly from the feature file.
+we dont have to go in the step definitions to change the data when we use parameterization.
+
+difference between parameterization and datatables = in datatables we can pass collections type of data like list, map, list of map, map of map.
+They are both done for the same step
+
+difference between parameterization and scenario outlines = scenario outlines allows us to simplify the
+DDT by creating "example" tables under our scenario outlines
+
+parallel testing = with access to the plugin in the pom xml file,
+we can run all of our scenarios using different drivers/browsers which results in a faster execution
+
+
+also you can easily locate elements for your pages by clicking on the page icon in the page class and using target icon
